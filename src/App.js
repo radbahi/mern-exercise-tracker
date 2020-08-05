@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom"; // rememeber react router. powerful url tool.
+import "bootstrap/dist/css/bootstrap.min.css" // old way of doing bootstrap. look at react bootstrap for better ways to use their stuff.
 import "./App.css";
 import Navbar from "./components/navbar.component";
 import ExercisesList from "./components/exercises-list.component";
