@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom"; // rememeber react router. powerful url tool.
-import "bootstrap/dist/css/bootstrap.min.css" // old way of doing bootstrap. look at react bootstrap for better ways to use their stuff.
+import "bootstrap/dist/css/bootstrap.min.css"; // old way of doing bootstrap. look at react bootstrap for better ways to use their stuff.
 import "./App.css";
 import Navbar from "./components/navbar.component";
 import ExercisesList from "./components/exercises-list.component";
@@ -11,11 +11,13 @@ import CreateUser from "./components/create-user.component";
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Route path="/" exact component={ExercisesList} />
-      <Route path="/edit/:id" exact component={EditExercise} />
-      <Route path="/create" exact component={CreateExercise} />
-      <Route path="/user" exact component={CreateUser} />
+      <div className="container">
+        <Navbar />
+        <Route path="/" exact component={ExercisesList} />
+        <Route path="/edit/:id" exact component={EditExercise} />
+        <Route path="/create" exact component={CreateExercise} />
+        <Route path="/user" exact component={CreateUser} />
+      </div>
     </Router>
   );
 }
