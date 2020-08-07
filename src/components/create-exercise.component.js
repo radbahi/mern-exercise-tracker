@@ -51,7 +51,7 @@ export default class CreateExercise extends Component {
     });
   }
 
-  onChangeDate(e) {
+  onChangeDate(date) {
     // remember to replace this with hooks
     this.setState({
       date: date, // going to be using a library to make a calendar appear for this
@@ -126,6 +126,9 @@ export default class CreateExercise extends Component {
                 onChange={this.onChangeDate}
               />
             </div>
+          </div>
+          <div className="form-group">
+              <input type='submit' value='Create Exercise Log' className='btn btn-primary'/>
           </div>
         </form>
       </div>
