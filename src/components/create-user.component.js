@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios'
+import axios from "axios";
 
 export default class CreateUser extends Component {
   constructor(props) {
@@ -30,10 +30,9 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('http://localhost:5000/users/add', user) // library for doing fetches
-        .then(res => console.log(res.data))
-
-
+    axios
+      .post("http://localhost:3000/users/add", user) // library for doing fetches
+      .then((res) => console.log(res.data));
 
     this.setState({
       username: "",
@@ -46,7 +45,7 @@ export default class CreateUser extends Component {
         <h3>Create New User</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
-            <label>Useername: </label>
+            <label>Username: </label>
             <input
               type="text"
               required

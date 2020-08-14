@@ -5,7 +5,8 @@ const Schema = mongoose.Schema; // define schema function here
 const userSchema = new Schema(
   {
     // and the schema. remember how you did it in rails. pretty much the same thing.
-    username: { // attribute name
+    username: {
+      // attribute name
       type: String, // String type
       required: true, // username must be provided
       unique: true, // username must not match with any other in the database
@@ -18,8 +19,8 @@ const userSchema = new Schema(
   }
 );
 
-const User = mongoose.model('User', userSchema) // this uses mongoose to define it as a schema model
+const User = mongoose.model("User", userSchema); // this uses mongoose to define it as a schema model
 
-module.exports = User // export it when we call for this file
+module.exports = User; // export it when we call for this file
 
 // once all schema models are done, work on crud. goto routes folder

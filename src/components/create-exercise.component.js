@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DatePicker from "react-datepicker"; // calendar library
 import "react-datepicker/dist/react-datepicker.css"; // this imports the styling of the datepicker
+import axios from "axios";
 
 export default class CreateExercise extends Component {
   constructor(props) {
@@ -24,9 +25,13 @@ export default class CreateExercise extends Component {
 
   componentDidMount() {
     // remember to replace this with hooks. hardcoded user for testing purposes.
-    this.setState({
-      users: ["test user"],
-      username: "test user",
+    axios.get("http://localhost:3000/users").then((res) => {
+      if (res.data.length > 0) {
+        this.setState({
+          users: res.data.map((user) => user.username),
+          username: res.data[0].username, // sets it to be the first user in the user database
+        });
+      }
     });
   }
 
@@ -69,6 +74,10 @@ export default class CreateExercise extends Component {
     };
 
     console.log(exercise);
+
+    axios
+      .post("http://localhost:3000/exercises/add", exercise) // library for doing fetches
+      .then((res) => console.log(res.data));
 
     window.location = "/"; // takes user back to this url after submission
   }
