@@ -5,7 +5,7 @@ const mongoose = require("mongoose"); // connects to mongoDB database
 require("dotenv").config(); // used for environment variables for dotenv file
 
 const app = express(); // needed for express server
-const port = process.env.PORT || 5000; // needed for express server
+const port = process.env.PORT || 3000; // needed for express server. MAYBE CHANGE TO 5000?
 
 app.use(cors()); // cors middleware
 app.use(express.json()); // allows us to parse json
