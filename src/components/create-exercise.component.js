@@ -29,7 +29,7 @@ export default class CreateExercise extends Component {
       if (res.data.length > 0) {
         this.setState({
           users: res.data.map((user) => user.username),
-          username: res.data[0].username, // sets it to be the first user in the user database
+          username: res.data[0].username, // sets it to be the first user in the user database. this is just to have a selection from the get-go, not too necessary
         });
       }
     });
@@ -76,7 +76,7 @@ export default class CreateExercise extends Component {
     console.log(exercise);
 
     axios
-      .post("http://localhost:3000/exercises/add", exercise) // library for doing fetches
+      .post("http://localhost:5000/exercises/add", exercise) // library for doing fetches
       .then((res) => console.log(res.data));
 
     window.location = "/"; // takes user back to this url after submission

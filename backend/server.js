@@ -11,7 +11,7 @@ app.use(cors()); // cors middleware
 app.use(express.json()); // allows us to parse json
 
 const uri = process.env.ATLAS_URI; // this is defined to get value from ATLAS_URI env variable. it is put as an argument in mongoose.connect to establish the connection
-mongoose.connect(uri, {
+mongoose.connect(uri, { // remember that ATLAS_URI needs database password, NOT mongoDB Atlas account password
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
@@ -32,5 +32,5 @@ app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
 
-// then type 'nodemon server' in terminal to start server
+// then type 'nodemon server' in terminal to start server. remember to navigate to backend folder in terminal.
 // once this server file is set up, create schema file with mongoose. goto models folder.

@@ -22,7 +22,7 @@ router.route("/add").post((req, res) => {
     date,
   }); // creates new exercise with all this data
 
-  newUser
+  newExercise
     .save() // then its saved
     .then(() => res.json("User added!")) // after its saved, respond with this msg
     .catch((err) => res.status(400).json("Error: " + err)); // else return error msg
