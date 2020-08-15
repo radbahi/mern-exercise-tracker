@@ -25,7 +25,7 @@ export default class CreateExercise extends Component {
 
   componentDidMount() {
     // remember to replace this with hooks. hardcoded user for testing purposes.
-    axios.get("http://localhost:3000/users").then((res) => {
+    axios.get("http://localhost:5000/users").then((res) => {
       if (res.data.length > 0) {
         this.setState({
           users: res.data.map((user) => user.username),

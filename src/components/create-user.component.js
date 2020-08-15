@@ -31,7 +31,7 @@ export default class CreateUser extends Component {
     console.log(user);
 
     axios
-      .post("http://localhost:3000/users/add", user) // library for doing fetches
+      .post("http://localhost:5000/users/add", user) // library for doing fetches
       .then((res) => console.log(res.data));
 
     this.setState({
